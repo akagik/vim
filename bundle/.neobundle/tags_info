@@ -1,0 +1,9 @@
+ctrlp.vim
+neobundle.vim
+neosnippet-snippets
+neosnippet.vim
+vim-clang-format
+vim-colorschemes
+vim-fugitive
+vim-operator-user
+vimshell

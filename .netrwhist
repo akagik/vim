@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/kohei/test/allegro'
+let g:netrw_dirhist_2='/home/kohei/.vim/ftplugin/cpp'
+let g:netrw_dirhist_3='/home/kohei/.vim'
+let g:netrw_dirhist_4='/home/kohei/.vim/garbage/commentout'
+let g:netrw_dirhist_5='/home/kohei/test/effectivecpp'
+let g:netrw_dirhist_6='/home/kohei/test/effectivecpp/section1'
+let g:netrw_dirhist_7='/home/kohei/.vim/ftplugin/cpp'
+let g:netrw_dirhist_8='/home/kohei/test/effectivecpp'
+let g:netrw_dirhist_9='/home/kohei/test/effectivecpp/section1'
