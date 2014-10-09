@@ -1,0 +1,5 @@
+*noarrows.txt*	Plugin for becoming familiar with not using the arrow keys
+
+This plugin prohibits the use of the arrow keys.
+
+To allow you use the arrow keys, use the command ':ToggleNoKey.
