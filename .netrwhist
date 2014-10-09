@@ -1,6 +1,0 @@
-afaf
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users'
-let g:netrw_dirhist_2='/Users/kohei/.vim/bundle/neobundle.vim'
-let g:netrw_dirhist_3='/Users/kohei/.vim/ftplugin'
