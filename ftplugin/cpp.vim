@@ -47,8 +47,8 @@ function! Comment_out() range
 	let &hlsearch = save_hlsearch 
 endfunction
 
-nmap <C-K> :.call Comment_out()<CR>
-vmap <C-K> :call Comment_out()<CR>
+nmap <C-N> :.call Comment_out()<CR>
+vmap <C-N> :call Comment_out()<CR>
 
 nmap <C-M> :w<CR>:make<CR>
 nmap <F2> :!./a.out<CR>
