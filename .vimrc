@@ -47,7 +47,14 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
-let CoqIDE_coqtop = "/Applications/CoqIde_8.4pl4.app/Contents/Resources/bin/coqtop.opt"
+
+if has('mac')
+	let CoqIDE_coqtop = ""
+elseif has('mac')
+	let CoqIDE_coqtop = "/Applications/CoqIde_8.4pl4.app/Contents/Resources/bin/coqtop.opt"
+else
+	let CoqIDE_coqtop = "/usr/bin/coqtop.opt"
+endif
 
 set number
 syntax on
