@@ -18,9 +18,16 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'https://github.com/emonkak/vim-operator-comment.git'
 
 NeoBundle 'https://github.com/rhysd/vim-clang-format'
 NeoBundle 'https://github.com/kana/vim-operator-user'
+
+NeoBundle 'jvoorhis/coq.vim'
+NeoBundle 'vim-scripts/CoqIDE', {
+			\ 'autoload' : {
+			\   'filetypes' : 'coq'
+			\ }}
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -39,6 +46,8 @@ filetype plugin indent on
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
+
+let CoqIDE_coqtop = "/Applications/CoqIde_8.4pl4.app/Contents/Resources/bin/coqtop.opt"
 
 set number
 syntax on

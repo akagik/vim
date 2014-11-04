@@ -1,8 +1,28 @@
-nmap <C-M> :w<CR>:!platex %<CR>:!dvipdfmx %<<CR>
-nmap <F1> :!open %<.pdf<CR>
+nnoremap <F1> :w<CR>:!platex %<CR>:!dvipdfmx %<<CR>
+inoremap <F1> <ESC>:w<CR>:!platex %<CR>:!dvipdfmx %<<CR>a
+nmap <F2> :!open %<.pdf<CR>
+imap <F2> <ESC>:!open %<.pdf<CR>a
 
 imap <C-T>i \\begin{itemize}<CR>\\item<CR>\\end{itemize}<ESC>kA\ 
+imap <C-T>e \\begin{enumerate}<CR>\\item<CR>\\end{enumerate}<ESC>kA\ 
 imap <C-T>m \\begin{eqnarray*}<CR>\\end{eqnarray*}<ESC>O
 imap <C-T>ra $\\rightarrow$ 
 imap <C-T>f \\frac{}{} 
 inoremap <C-$> $$<ESC>i
+
+function! Comment_out() range
+	let save_hlsearch = &hlsearch
+	let lnum = a:firstline
+	while lnum <= a:lastline
+		if match(getline(lnum), "^\\s*%") == -1
+			exec lnum . "s/^/%/"	
+		else
+			exec lnum . "s/^\\(\\s*\\)%/\\1/"	
+		endif
+		let lnum = lnum + 1
+	endwhile
+	let &hlsearch = save_hlsearch 
+endfunction
+
+nmap <C-N> :.call Comment_out()<CR>
+vmap <C-N> :call Comment_out()<CR>
