@@ -17,3 +17,4 @@ vmap <C-N> :call Comment_out()<CR>
 
 nmap <F1> :w<CR>:!python %<CR>
 nmap <F2> :w<CR>:!python -i %<CR>
+nmap <F3> :w<CR>:!python %\|less<CR>
