@@ -48,8 +48,8 @@ filetype plugin indent on
 NeoBundleCheck
 
 
-if has('mac')
-	let CoqIDE_coqtop = ""
+if has('win32')
+	let CoqIDE_coqtop = "/Applications/CoqIde_8.4pl4.app/Contents/Resources/bin/coqtop.opt"
 elseif has('mac')
 	let CoqIDE_coqtop = "/Applications/CoqIde_8.4pl4.app/Contents/Resources/bin/coqtop.opt"
 else

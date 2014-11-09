@@ -33,5 +33,19 @@ function! Comment_out() range
 	let &hlsearch = save_hlsearch 
 endfunction
 
+function! To_Variable() range
+	let save_hlsearch = &hlsearch
+	let lnum = a:firstline
+	while lnum <= a:lastline
+		let line = getline(lnum)
+		let subtext = substitute(line, '\(\A\)\(\h\+\)\(\A\)', "\\1$\\2$\\3", "g")
+		call setline(lnum, subtext)
+		let lnum = lnum + 1
+	endwhile
+	let &hlsearch = save_hlsearch 
+endfunction
+
 nmap <C-N> :.call Comment_out()<CR>
 vmap <C-N> :call Comment_out()<CR>
+
+vmap <C-T>v :call To_Variable()<CR>
