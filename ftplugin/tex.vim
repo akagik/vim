@@ -2,6 +2,10 @@ nnoremap <F1> :w<CR>:!platex %<CR>:!dvipdfmx %<<CR>
 inoremap <F1> <ESC>:w<CR>:!platex %<CR>:!dvipdfmx %<<CR>a
 nmap <F2> :!open %<.pdf<CR>
 imap <F2> <ESC>:!open %<.pdf<CR>a
+nmap <F3> :!pbibtex %<<CR>
+
+nnoremap vi$ F$lvf$h
+nnoremap va$ F$vf$
 
 imap <C-T>i \\begin{itemize}<CR>\\item<CR>\\end{itemize}<ESC>kA\ 
 imap <C-T>e \\begin{enumerate}<CR>\\item<CR>\\end{enumerate}<ESC>kA\ 

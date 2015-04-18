@@ -15,6 +15,14 @@ endfunction
 nmap <C-N> :.call Comment_out()<CR>
 vmap <C-N> :call Comment_out()<CR>
 
-nmap <F1> :w<CR>:!python %<CR>
-nmap <F2> :w<CR>:!python -i %<CR>
-nmap <F3> :w<CR>:!python %\|less<CR>
+if has('win32')
+	let pycommand = "python"
+elseif has('mac')
+	let pycommand = "/Users/kohei/.pyenv/shims/python"
+else
+	let pycommand = "python"
+endif
+
+nmap <F1> :w<CR>:execute "!".pycommand "%"<CR>
+nmap <F2> :w<CR>:execute "!".pycommand "-i %"<CR>
+nmap <F3> :w<CR>:execute "!".pycommand "%\|less"<CR>
