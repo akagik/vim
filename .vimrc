@@ -33,8 +33,12 @@ NeoBundle 'vim-scripts/CoqIDE', {
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 
-" NeoBundle 'davidhalter/jedi-vim'
-
+"NeoBundle 'davidhalter/jedi-vim'
+"NeoBundleLazy 'davidhalter/jedi-vim', {
+"    \ "rev" : "dev",
+"    \ "autoload": {
+"    \    "filetypes": [ "python", "python3" ]},
+"    \}
 
 " lazy evaluate
 "NeoBundleLazy 'vim-clang-format',{
