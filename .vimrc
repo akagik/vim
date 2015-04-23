@@ -1,3 +1,5 @@
+let $PATH = "~/.pyenv/shims:".$PATH
+
 if has('vim_starting')
   set nocompatible               " Be iMproved
 
@@ -33,17 +35,31 @@ NeoBundle 'vim-scripts/CoqIDE', {
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 
-"NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'davidhalter/jedi-vim'
 "NeoBundleLazy 'davidhalter/jedi-vim', {
 "    \ "rev" : "dev",
 "    \ "autoload": {
 "    \    "filetypes": [ "python", "python3" ]},
 "    \}
 
+" pyenv 処理用に vim-pyenv を追加
+" " Note: depends が指定されているため jedi-vim
+" より後にロードされる（ことを期待）
+"NeoBundle "lambdalisue/vim-pyenv"
+NeoBundleLazy "lambdalisue/vim-pyenv", {
+   \ "depends": ['davidhalter/jedi-vim'],
+   \ "autoload": {
+   \   "filetypes": ["python", "python3"]
+   \ }}
+
+
 " lazy evaluate
 "NeoBundleLazy 'vim-clang-format',{
 "	\"autoload" : {"filetypes" :[ "cpp" ]}
 "	\}
+
+NeoBundle "kevinw/pyflakes-vim"
+NeoBundle "nathanaelkane/vim-indent-guides"
 
 " Required:
 call neobundle#end()
@@ -79,3 +95,28 @@ set swapfile
 " j, k による移動を折り返されたテキストでも自然に振る舞うように変更
 nnoremap j gj
 nnoremap k gk
+
+" jedi-vimでピリオドを打つたび補完候補が出るのを避ける
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+
+
+"autocmd FileType python setlocal omnifunc=jedi#completions
+"
+"let g:jedi#auto_vim_configuration = 0
+"if !exists('g:neocomplete#force_omni_input_patterns')
+"	        let g:neocomplete#force_omni_input_patterns = {}
+"		endif
+"
+"		let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+
+" vim-indent-guides
+let g:indent_guides_auto_colors=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=236
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_guide_size=1
+let g:indent_guides_start_level = 2
+
+highlight SpellBad term=undercurl ctermbg=1
+"highlight SpellBad guifg=NONE guibg=NONE gui=undercurl ctermfg=white ctermbg=red cterm=NONE guisp=#FFFFFF " undercurl color
