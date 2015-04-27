@@ -9,7 +9,7 @@ elseif has('mac')
 	nmap <F2> :!open %<.pdf<CR>
 	imap <F2> <ESC>:!open %<.pdf<CR>a
 else
-	nmap <F2> :!evince %<.pdf<CR>
+	nmap <F2> :!evince %<.pdf &<CR>
 endif
 
 imap <C-T>i \\begin{itemize}<CR>\\item<CR>\\end{itemize}<ESC>kA\ 
