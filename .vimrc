@@ -32,6 +32,14 @@ NeoBundle 'vim-scripts/CoqIDE', {
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
+
+"NeoBundle 'davidhalter/jedi-vim'
+"NeoBundleLazy 'davidhalter/jedi-vim', {
+"    \ "rev" : "dev",
+"    \ "autoload": {
+"    \    "filetypes": [ "python", "python3" ]},
+"    \}
+
 " lazy evaluate
 "NeoBundleLazy 'vim-clang-format',{
 "	\"autoload" : {"filetypes" :[ "cpp" ]}
@@ -66,3 +74,8 @@ set backup
 set backupdir=/tmp
 
 set swapfile
+" let g:jedi#auto_initialization = 0
+
+" j, k による移動を折り返されたテキストでも自然に振る舞うように変更
+nnoremap j gj
+nnoremap k gk
