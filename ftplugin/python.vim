@@ -1,3 +1,9 @@
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+
 function! Comment_out() range
 	let save_hlsearch = &hlsearch
 	let lnum = a:firstline
