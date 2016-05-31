@@ -9,7 +9,7 @@ if exists("g:loaded_noarrow")
 endif
 let g:loaded_noarrow = 1
 
-let s:save_cpo = $cpo
+let s:cpo_save = &cpo
 set cpo&vim
 
 let s:isProhibited=0
@@ -50,6 +50,6 @@ if !exists("ToggleNoKey")
 	command -nargs=0 ToggleNoKey :call s:ToggleArrowKeys()
 endif
 
-ToggleNoKey
-let &cpo = s:save_cpo
+let &cpo = s:cpo_save
+unlet s:cpo_save
 
