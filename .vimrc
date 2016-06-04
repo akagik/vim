@@ -334,6 +334,7 @@ set hlsearch
 set colorcolumn=100      " 100文字目に色付け
 set backspace=indent,eol,start 
 
+set mouse=a
                         " BSで削除できるものを指定する
 set fdm=marker          " 折り畳みを作成したときにマーカーを挿入
 
