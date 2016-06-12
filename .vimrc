@@ -158,7 +158,7 @@ function! s:hooks.on_source(bundle)
 endfunction
 
 nnoremap <Space>f 
-            \ :VimFilerExplorer -split -simple -winwidth=40 -no-quit<CR>
+            \ :VimFilerExplorer -split -simple -winwidth=25 -no-quit<CR>
 
 "}}} ------------------------------------------------------------------------
 

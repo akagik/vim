@@ -1,12 +1,8 @@
 
 if has('win32')
-	nmap <F1> :w<CR>:!python3.4 %<CR>
-	nmap <F2> :w<CR>:!python3.4 -i %<CR>
-	nmap <F3> :w<CR>:!python3.4 %\|less<CR>
+	nmap <F1> :w<CR>:!firefox %<CR>
 elseif has('mac')
-	nmap <F1> :w<CR>:!/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome %<CR>
+	nmap <F1> :w<CR>:!firefox %<CR>
 else
-	nmap <F1> :w<CR>:!python3.4 %<CR>
-	nmap <F2> :w<CR>:!python3.4 -i %<CR>
-	nmap <F3> :w<CR>:!python3.4 %\|less<CR>
+	nmap <F1> :w<CR>:!firefox %<CR>
 endif
