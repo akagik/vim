@@ -303,6 +303,17 @@ NeoBundle 'Chiel92/vim-autoformat'
 unlet s:envHome
 "}}}
 
+" Unity "{{{
+NeoBundleLazy 'OmniSharp/omnisharp-vim', {
+      \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
+      \   'build': {
+      \     'windows' : 'msbuild server/OmniSharp.sln',
+      \     'mac': 'xbuild server/OmniSharp.sln',
+      \     'unix': 'xbuild server/OmniSharp.sln',
+      \   },
+      \ }
+NeoBundle 'tpope/vim-dispatch'
+"}}}
 
 " Required:
 call neobundle#end()
